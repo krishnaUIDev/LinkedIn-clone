@@ -7,8 +7,17 @@ import Network from "@material-ui/icons/SupervisorAccount";
 import Jobs from "@material-ui/icons/Business";
 import Messaging from "@material-ui/icons/Chat";
 import Notifications from "@material-ui/icons/Notifications";
+import { useDispatch, useSelector } from "react-redux";
+import { auth } from "./firebase";
+import { logout, selectUser } from "./features/userSlice";
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const logoutApp = () => {
+    dispatch(logout());
+    auth.signOut();
+  };
   return (
     <div className="header">
       <div className="header__left">
@@ -18,7 +27,7 @@ const Header = () => {
         />
         <div className="header__search">
           <SearchIcon />
-          <input type="text" />
+          <input type="text" placeholder="Search" />
         </div>
       </div>
       <div className="header__right">
@@ -27,7 +36,7 @@ const Header = () => {
         <HeaderOption title="Jobs" Icon={Jobs} />
         <HeaderOption title="Messaging" Icon={Messaging} />
         <HeaderOption title="Notifications" Icon={Notifications} />
-        <HeaderOption avatar="https://compassionate-leakey.jpg" title="me" />
+        <HeaderOption avatar={true} title="me" onClick={logoutApp} />
       </div>
     </div>
   );
