@@ -5,7 +5,7 @@ import Comment from "@material-ui/icons/ChatOutlined";
 import Share from "@material-ui/icons/ShareOutlined";
 import Send from "@material-ui/icons/SendOutlined";
 
-import InputOptions from "./InputOptions";
+import InputOptions from "../InputOptions/InputOptions";
 import "./Post.css";
 
 const Post = forwardRef(({ name, description, message, photoUrl }, ref) => {

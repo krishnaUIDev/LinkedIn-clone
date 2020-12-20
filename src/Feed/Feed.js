@@ -4,14 +4,15 @@ import Imageicon from "@material-ui/icons/Image";
 import SubscriptionIcon from "@material-ui/icons/Subscriptions";
 import EventNoteIcon from "@material-ui/icons/EventNote";
 import CalenderviewDayIcon from "@material-ui/icons/CalendarViewDay";
-import { auth, db } from "./firebase";
-import "./Feed.css";
-import InputOptions from "./InputOptions";
-import Post from "./Post";
 import firebase from "firebase";
 import { useSelector } from "react-redux";
-import { selectUser } from "./features/userSlice";
 import FlipMove from "react-flip-move";
+
+import { selectUser } from "../features/userSlice";
+import { auth, db } from "../firebase";
+import "./Feed.css";
+import InputOptions from "../InputOptions/InputOptions";
+import Post from "../Post/Post";
 
 const Feed = () => {
   const [input, setInput] = useState("");

@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import Header from "./Header";
-import SideBar from "./SideBar";
-import Feed from "./Feed";
+import Header from "./Header/Header";
+import SideBar from "./SideBar/SideBar";
+import Feed from "./Feed/Feed";
 import "./App.css";
 import { selectUser, logout, login } from "./features/userSlice";
-import Login from "./Login";
+import Login from "./Login/Login";
 import { auth } from "./firebase";
 
 function App() {
