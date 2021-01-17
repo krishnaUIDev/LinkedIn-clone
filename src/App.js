@@ -9,6 +9,7 @@ import { selectUser, logout, login } from "./features/userSlice";
 import Login from "./Login/Login";
 import { auth } from "./firebase";
 import Widgets from "./Widgets";
+import UserForm from "./Form/UserForm";
 
 function App() {
   const user = useSelector(selectUser);
@@ -30,6 +31,7 @@ function App() {
       }
     });
   }, []);
+  return <UserForm />;
   return (
     <div className="app">
       <Header />
